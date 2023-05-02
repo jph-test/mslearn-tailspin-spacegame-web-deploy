@@ -10,7 +10,6 @@ stages:
 
 - stage: 'Test'
   displayName: 'Deploy to the test environment'
-  dependsOn: Dev
   jobs:
   - job: RunUITests
     dependsOn: Deploy
