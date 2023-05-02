@@ -33,6 +33,9 @@ stages:
         rfbrowser init
       displayName: 'rfbrowser init'
     - script: |
+        dir
+      displayName: 'Run dir cmd'
+    - script: |
         robot ./Tests.robot
       displayName: 'Run RF Test'
     - script: |
