@@ -33,9 +33,12 @@ stages:
         rfbrowser init
       displayName: 'rfbrowser init'
     - script: |
+        robot ./Tests.robot
+      displayName: 'Run RF Test'
+    - script: |
       displayName: 'Transform JMeter output to JUnit'
     - task: PublishTestResults@2
       inputs:
         testResultsFormat: JUnit
-        testResultsFiles: JUnit.xml
+        testResultsFiles: output.xml
 
