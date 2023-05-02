@@ -30,7 +30,7 @@ stages:
         python -m pip install robotframework robotframework-browser
       displayName: 'pip robotframework installs'
     - script: |
-        python rfbrowser init
+        rfbrowser init
       displayName: 'rfbrowser init'
     - script: |
       displayName: 'Transform JMeter output to JUnit'
