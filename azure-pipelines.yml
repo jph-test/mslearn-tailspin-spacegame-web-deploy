@@ -36,7 +36,7 @@ stages:
         dir
       displayName: 'Run dir cmd'
     - script: |
-        robot ./Tests.robot
+        robot ./Tailspin.SpaceGame.Web.UITests/Tests.robot
       displayName: 'Run RF Test'
     - script: |
       displayName: 'Transform JMeter output to JUnit'
