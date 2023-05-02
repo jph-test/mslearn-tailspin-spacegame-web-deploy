@@ -128,11 +128,13 @@ stages:
       displayName: 'Run npm install'
       inputs:
         verbose: false
+    - script: 
+        python -m pip install robotframework
+        python -m pip install robotframework-browser
+      displayName: 'pip robotframework installs'
     - script: |
-        rfbrowser init
-      displayName: 'Initialize rfbrowser'
-    - script: python -m pip install robotframework
-      displayName: 'pip installs'
+        python -m rfbrowser init
+      displayName: 'rfbrowser init'
     - script: |
       displayName: 'Transform JMeter output to JUnit'
     - task: PublishTestResults@2
