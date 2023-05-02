@@ -36,10 +36,12 @@ stages:
         dir
       displayName: 'Run dir cmd'
     - script: |
-        robot ./Tailspin.SpaceGame.Web.UITests/Tests.robot
+        robot -d ./Results ./Tailspin.SpaceGame.Web.UITests/Tests.robot
       displayName: 'Run RF Test'
     - script: |
       displayName: 'Transform JMeter output to JUnit'
+    - publish: ./Results
+      artifact: Results
     - task: PublishTestResults@2
       inputs:
         testResultsFormat: JUnit
