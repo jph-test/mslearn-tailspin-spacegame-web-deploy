@@ -14,7 +14,8 @@ stages:
   - job: RunUITests
     displayName: 'Run UI tests'
     pool:
-      vmImage: 'windows-2019'
+#      vmImage: 'windows-2019'
+      vmImage: 'ubuntu-20.04'
     variables:
     - group: 'Release'
     steps: 
@@ -32,23 +33,23 @@ stages:
     - script: |
         rfbrowser init
       displayName: 'rfbrowser init'
-    - script: |
-        dir
-      displayName: 'Run dir cmd'
+#    - script: |
+#        dir
+#      displayName: 'Run dir cmd'
     - script: |
         robot -d ./Results ./Tailspin.SpaceGame.Web.UITests/Tests.robot
       displayName: 'Run RF Test'
     - script: |
         rebot -x XUnit.xml ./Results/output.xml
       displayName: 'Generate XUnit from JMeter output'
-    - script: |
-        dir
-      displayName: 'Run dir2 cmd'
+#    - script: |
+#        dir
+#      displayName: 'Run dir2 cmd'
     - publish: ./Results
       artifact: Results
-    - script: |
-        dir
-      displayName: 'Run dir3 cmd'
+#    - script: |
+#        dir
+#      displayName: 'Run dir3 cmd'
     - task: PublishTestResults@2
       inputs:
         testResultsFormat: JUnit
