@@ -41,10 +41,16 @@ stages:
     - script: |
         rebot -x XUnit.xml ./Results/output.xml
       displayName: 'Generate XUnit from JMeter output'
+    - script: |
+        dir
+      displayName: 'Run dir2 cmd'
     - publish: ./Results
       artifact: Results
+    - script: |
+        dir
+      displayName: 'Run dir3 cmd'
     - task: PublishTestResults@2
       inputs:
         testResultsFormat: XUnit
-        testResultsFiles: ./XUnit.xml
+        testResultsFiles: XUnit.xml
 
