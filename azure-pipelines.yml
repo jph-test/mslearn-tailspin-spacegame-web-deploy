@@ -39,11 +39,12 @@ stages:
         robot -d ./Results ./Tailspin.SpaceGame.Web.UITests/Tests.robot
       displayName: 'Run RF Test'
     - script: |
-      displayName: 'Transform JMeter output to JUnit'
+        rebot -x./XUnit.xml ./Results/output.xml
+      displayName: 'Generate XUnit from JMeter output'
     - publish: ./Results
       artifact: Results
     - task: PublishTestResults@2
       inputs:
-        testResultsFormat: JUnit
-        testResultsFiles: ./JUnit.xml
+        testResultsFormat: XUnit
+        testResultsFiles: ./XUnit.xml
 
