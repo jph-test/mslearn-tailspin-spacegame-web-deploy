@@ -51,6 +51,6 @@ stages:
       displayName: 'Run dir3 cmd'
     - task: PublishTestResults@2
       inputs:
-        testResultsFormat: XUnit
+        testResultsFormat: JUnit
         testResultsFiles: XUnit.xml
 
