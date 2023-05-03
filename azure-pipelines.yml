@@ -45,5 +45,5 @@ stages:
     - task: PublishTestResults@2
       inputs:
         testResultsFormat: JUnit
-        testResultsFiles: ./Results/output.xml
+        testResultsFiles: ./JUnit.xml
 
