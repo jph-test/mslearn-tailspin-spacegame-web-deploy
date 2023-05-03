@@ -39,7 +39,7 @@ stages:
         robot -d ./Results ./Tailspin.SpaceGame.Web.UITests/Tests.robot
       displayName: 'Run RF Test'
     - script: |
-        rebot -x ./XUnit.xml ./Results/output.xml
+        rebot -x XUnit.xml ./Results/output.xml
       displayName: 'Generate XUnit from JMeter output'
     - publish: ./Results
       artifact: Results
